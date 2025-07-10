@@ -4,7 +4,7 @@ require('dotenv').config();
 const login = (req, res) => {
   const { username, password } = req.body;
 
-  // Hardcoded admin login
+ 
   if (username === 'admin' && password === 'admin123') {
     const token = jwt.sign({ username }, process.env.JWT_SECRET, { expiresIn: '1h' });
     return res.json({ token });

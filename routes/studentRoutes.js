@@ -3,7 +3,7 @@ const router = express.Router();
 const Student = require('../models/Student');
 const authenticate = require('../middleware/authMiddleware');
 
-// Create a student
+
 router.post('/', authenticate, async (req, res) => {
   try {
     const student = await Student.create(req.body);
@@ -13,7 +13,7 @@ router.post('/', authenticate, async (req, res) => {
   }
 });
 
-// Get all students
+
 router.get('/', authenticate, async (req, res) => {
   const students = await Student.findAll();
   res.json(students);
